@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.myInput{
+    font-family: "Impact";
+    font-size: 1em;
+    background: rgba(0,0,0,0.5);
+    border: none;
+}
+h1{
+    text-align: center;
+}

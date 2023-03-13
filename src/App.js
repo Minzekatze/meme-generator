@@ -5,7 +5,7 @@ import { saveAs } from "file-saver";
 
 function App() {
   const [memes, setMemes] = useState([]);
-  const [newIndex, setNewIndex] = useState([0]);
+  const [newIndex, setNewIndex] = useState([Math.floor(Math.random() * 100)]);
   const url = "https://api.imgflip.com/get_memes";
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState();
@@ -34,6 +34,9 @@ function App() {
     } while (oldNumber === newNumber);
     console.log(newNumber);
     setNewIndex(newNumber);
+  }
+  function refreshPage() {
+    window.location.reload(false);
   }
 
   function handlePic() {
@@ -105,8 +108,11 @@ function App() {
         <button style={{ margin: "1em auto 0 auto" }} onClick={handleClick}>
           Next meme
         </button>
-        <button style={{ margin: "1em auto 1em auto" }} onClick={handlePic}>
+        <button style={{ margin: "1em auto 0 auto" }} onClick={handlePic}>
           download meme
+        </button>
+        <button style={{ margin: "1em auto 0 auto" }} onClick={refreshPage}>
+          reset all
         </button>
         <h1>Upload your meme!</h1>
         <input
